@@ -1,12 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Library</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
+
 <body>
-    
+    <!-- Header -->
+    <header>Virtual Library<span class="material-icons">menu_book</span></header>
+    <!-- Book form -->
+    <div id="form-container">
+        <form id="book-form">
+            <!-- Author -->
+            <div>
+                <label for="author">Author</label><br>
+                <input type="text" id="author"><br>
+            </div>
+            <!-- Title -->
+            <div>
+                <label for="title">Title</label><br>
+                <input type="text" id="title"><br>
+            </div>
+            <!-- Pages -->
+            <div>
+                <label for="pages">Pages</label><br>
+                <input type="number" id="pages"><br>
+            </div>
+            <!-- Read -->
+            <div>
+                <label for="read">Read?</label><br>
+                <input type="checkbox" id="read"><br>
+            </div>
+            <!-- Submit -->
+            <input type="submit" id="add-book" value="ADD BOOK">
+        </form>
+    </div>
+
+    <div id="card-container">
+        <div id="card">
+            <div>
+                <p class="card-content" id="title">Title</p>
+                <p class="card-content" id="author">Author</p>
+                <p class="card-content" id="pages">Pages</p>
+            </div>
+            <div>
+                <button class="card-buttons">Read</button>
+                <button class="card-buttons">Delete</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="library.js"></script>
 </body>
+
 </html>
