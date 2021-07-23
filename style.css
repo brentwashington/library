@@ -4,11 +4,6 @@ html, body {
     padding: 0;
 }
 
-#book-form {
-    display: flex;
-    justify-content: space-around;
-}
-
 header {
     font-size: 2em;
     text-align: center;
@@ -19,34 +14,21 @@ header {
     margin-bottom: 3%;
 }
 
+#table-container {
+    display: flex;
+    justify-content: center;
+}
+
+table {
+    width: 50%;
+}
+
+table, th, td {
+    border: 1px solid black;
+}
+
 span {
     margin: 0px 15px;
-}
-
-#card {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: silver;
-    margin: 10%;
-}
-
-.card-content {
-    display: flex;
-    flex-direction: column;
-    justify-items: center;
-    margin: 10px;
-}
-
-.card-buttons {
-    padding: 1em 2em;
-    margin: 1em;
-}
-
-#card-container {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    margin: 5%;
 }
 
 label {
