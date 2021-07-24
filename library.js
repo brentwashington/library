@@ -1,12 +1,10 @@
-let book1 = new Book("S.E. Hinton", "The Outsiders", 192);
-let book2 = new Book("J.R.R. Tolkien", "The Hobbit", 304);
-
 let table = document.querySelector("table");
 let form = document.querySelector("form");
 
 let addBookButton = document.getElementById("add-book");
 
-let myLibrary = [book1, book2];
+// Initialize library array
+let myLibrary = [];
 
 // Constructor for Book
 function Book(author, title, pages) {
@@ -14,6 +12,9 @@ function Book(author, title, pages) {
   this.title = title;
   this.pages = pages;
 }
+
+// Display the saved library data
+setFromStorage();
 
 addBookButton.addEventListener("click", (e) => {
   // Stop button from reloading the page
@@ -27,18 +28,34 @@ addBookButton.addEventListener("click", (e) => {
   let book = new Book(authorInput, titleInput, pagesInput);
   myLibrary.push(book);
 
+  console.log(myLibrary);
+
   // Add book to the table
-  addBookToLibrary();
+  addBookToLibrary(titleInput, authorInput, pagesInput);
+
+  // Add the book to the local storage
+  addToStorage();
 
   // Clear inputs on form
   form.reset();
 });
 
-function addBookToLibrary() {
-  for (let book of myLibrary) {
-    let tableRow = table.insertRow();
-    tableRow.insertCell().textContent = book.title;
-    tableRow.insertCell().textContent = book.author;
-    tableRow.insertCell().textContent = book.pages;
-  }
+// Adds the library array to local storage
+function addToStorage() {
+  localStorage.setItem("Library", JSON.stringify(myLibrary));
+}
+
+// Retrieves and displays local storage data
+function setFromStorage() {
+  let retrievedData = localStorage.getItem("Library");
+  let library = JSON.parse(retrievedData);
+
+  library.forEach(book => addBookToLibrary(book.title, book.author, book.pages));
+}
+
+function addBookToLibrary(title, author, pages) {
+  let tableRow = table.insertRow();
+  tableRow.insertCell().textContent = title;
+  tableRow.insertCell().textContent = author;
+  tableRow.insertCell().textContent = pages;
 }
