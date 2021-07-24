@@ -13,18 +13,30 @@
 <body>
     <!-- Header -->
     <header>Virtual Library<span class="material-icons">menu_book</span></header>
+    <!-- Form -->
+    <div id="form-container">
+        <form>
+            <!-- Title -->
+            <label for="title">Title</label><br>
+            <input type="text" id="title"><br>
+            <!-- Author -->
+            <label for="author">Author</label><br>
+            <input type="text" id="author"><br>
+            <!-- Pages -->
+            <label for="pages">Pages</label><br>
+            <input type="number" id="pages"><br>
+            <!-- Add book -->
+            <button id="add-book">Add Book</button>
+        </form>
+    </div>
 
+    <!-- Table -->
     <div id="table-container">
         <table>
             <tr>
                 <th>Title</th>
                 <th>Author</th>
                 <th>Pages</th>
-            </tr>
-            <tr>
-                <td>The Outsiders</td>
-                <td>S.E. Hinton</td>
-                <td>192</td>
             </tr>
         </table>
     </div>

@@ -14,17 +14,32 @@ header {
     margin-bottom: 3%;
 }
 
+
+#form-container {
+    margin-left: 8%;
+}
+
+input {
+    margin-bottom: 8px;
+}
+
 #table-container {
     display: flex;
     justify-content: center;
 }
 
 table {
-    width: 50%;
+    width: 75%;
 }
 
 table, th, td {
-    border: 1px solid black;
+    border: 2px solid black;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 2%;
+    text-align: left;
 }
 
 span {
