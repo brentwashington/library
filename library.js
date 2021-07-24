@@ -24,20 +24,24 @@ addBookButton.addEventListener("click", (e) => {
   let authorInput = document.getElementById("author").value;
   let pagesInput = document.getElementById("pages").value;
 
-  // Create and add book to library array
-  let book = new Book(authorInput, titleInput, pagesInput);
-  myLibrary.push(book);
+  if (titleInput == "" || authorInput == "" || pagesInput == "") {
+    alert("Please enter valid input");
+  } else {
+    // Create and add book to library array
+    let book = new Book(authorInput, titleInput, pagesInput);
+    myLibrary.push(book);
 
-  console.log(myLibrary);
+    console.log(myLibrary);
 
-  // Add book to the table
-  addBookToLibrary(titleInput, authorInput, pagesInput);
+    // Add book to the table
+    addBookToLibrary(titleInput, authorInput, pagesInput);
 
-  // Add the book to the local storage
-  addToStorage();
+    // Add the book to the local storage
+    addToStorage();
 
-  // Clear inputs on form
-  form.reset();
+    // Clear inputs on form
+    form.reset();
+  }
 });
 
 // Adds the library array to local storage

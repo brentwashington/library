@@ -1,4 +1,5 @@
-html, body {
+html,
+body {
     background-color: cornflowerblue;
     margin: 0;
     padding: 0;
@@ -14,13 +15,28 @@ header {
     margin-bottom: 3%;
 }
 
-
 #form-container {
-    margin-left: 8%;
+    margin: 5%;
+}
+
+.form-inputs {
+    margin: 0px 5%;
+}
+
+form {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
 }
 
 input {
     margin-bottom: 8px;
+}
+
+button {
+    padding: 2em;
+    background-color: limegreen;
+    border: 2px outset green;
 }
 
 #table-container {
@@ -32,14 +48,28 @@ table {
     width: 75%;
 }
 
-table, th, td {
+table,
+th,
+td {
     border: 2px solid black;
     border-collapse: collapse;
 }
 
-th, td {
+th,
+td {
     padding: 2%;
     text-align: left;
+}
+
+th {
+    color: white;
+    background-color: darkslateblue;
+}
+
+td {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: large;
+    background-color: silver;
 }
 
 span {
