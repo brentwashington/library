@@ -52,6 +52,12 @@ function addToStorage() {
 // Retrieves and displays local storage data
 function setFromStorage() {
   let retrievedData = localStorage.getItem("Library");
+
+  // Check that storage data is not null
+  if (retrievedData === null) {
+    return;
+  }
+
   let library = JSON.parse(retrievedData);
 
   library.forEach(book => addBookToLibrary(book.title, book.author, book.pages));
